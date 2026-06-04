@@ -89,13 +89,15 @@ print("Saved:", len(df))
 
 os.system(
     "hdfs dfs -mkdir -p "
-    "/user/maria_dev/BUS_STATION_BOARDING_MONTH"
+    "/user/maria_dev/api_data"
 )
 
 os.system(
     "hdfs dfs -put -f "
     + output_file +
-    " /user/maria_dev/BUS_STATION_BOARDING_MONTH/"
+    " /user/maria_dev/api_data/"
 )
+
+print("Uploaded to HDFS: /user/maria_dev/api_data")
 
 print("Uploaded to HDFS")
