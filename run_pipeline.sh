@@ -7,19 +7,15 @@ echo "MJU Bus Data Pipeline Start"
 echo "================================="
 
 echo ""
-echo "[1/3] Data Collection..."
-
-python3.6 collect_data.py
-
-echo ""
-echo "[2/3] Spark Preprocessing..."
+echo "[1/2] Spark Preprocessing..."
 
 spark-submit preprocess.py
 
 echo ""
-echo "[3/3] Hive Analysis..."
+echo "[2/2] Hive Analysis..."
 
-beeline -u "jdbc:hive2://sandbox-hdp.hortonworks.com:10000" \
+beeline \
+-u "jdbc:hive2://sandbox-hdp.hortonworks.com:10000" \
 -n hive \
 -f hive_queries.sql
 
