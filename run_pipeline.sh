@@ -1,23 +1,39 @@
-#!/bin/bash
-
-cd ~/2026-bdp
-
-echo "================================="
+o "================================="
 echo "MJU Bus Data Pipeline Start"
 echo "================================="
 
 echo ""
-echo "[1/2] Spark Preprocessing..."
+echo "[1/3] Collect Data From Open API..."
+
+python3.6 collect_data.py
+
+if [ $? -ne 0 ]; then
+    echo "Data Collection Failed"
+    exit 1
+fi
+
+echo ""
+echo "[2/3] Spark Preprocessing..."
 
 spark-submit preprocess.py
 
+if [ $? -ne 0 ]; then
+    echo "Spark Preprocessing Failed"
+    exit 1
+fi
+
 echo ""
-echo "[2/2] Hive Analysis..."
+echo "[3/3] Hive Analysis..."
 
 beeline \
 -u "jdbc:hive2://sandbox-hdp.hortonworks.com:10000" \
 -n hive \
 -f hive_queries.sql
+
+if [ $? -ne 0 ]; then
+    echo "Hive Analysis Failed"
+    exit 1
+fi
 
 echo ""
 echo "================================="

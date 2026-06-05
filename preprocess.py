@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 
 from pyspark.sql import SparkSession
@@ -14,13 +13,14 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # =========================
-# 1. HDFS CSV 읽기
+# 1. API 데이터 읽기
 # =========================
 
 df = spark.read \
     .option("header", "true") \
-    .option("encoding", "cp949") \
-    .csv("/user/maria_dev/BUS_STATION_BOARDING_MONTH/*.csv")
+    .csv(
+        "/user/maria_dev/api_data/BUS_STATION_BOARDING_2025_1H.csv"
+    )
 
 # =========================
 # 2. 명지대 정류장 필터링
@@ -29,7 +29,7 @@ df = spark.read \
 target_stations = ["13195", "13196"]
 
 filtered_df = df.filter(
-    col("버스정류장ARS번호").isin(target_stations)
+    col("STOPS_ARS_NO").isin(target_stations)
 )
 
 # =========================
@@ -37,13 +37,13 @@ filtered_df = df.filter(
 # =========================
 
 selected_df = filtered_df.select(
-    "사용일자",
-    "노선번호",
-    "노선명",
-    "버스정류장ARS번호",
-    "역명",
-    "승차총승객수",
-    "하차총승객수"
+    "USE_YMD",
+    "RTE_NO",
+    "RTE_NM",
+    "STOPS_ARS_NO",
+    "SBWY_STNS_NM",
+    "GTON_TNOPE",
+    "GTOFF_TNOPE"
 )
 
 # =========================
@@ -52,12 +52,12 @@ selected_df = filtered_df.select(
 
 processed_df = selected_df \
     .withColumn(
-        "승차총승객수",
-        col("승차총승객수").cast(IntegerType())
+        "GTON_TNOPE",
+        col("GTON_TNOPE").cast(IntegerType())
     ) \
     .withColumn(
-        "하차총승객수",
-        col("하차총승객수").cast(IntegerType())
+        "GTOFF_TNOPE",
+        col("GTOFF_TNOPE").cast(IntegerType())
     )
 
 # =========================
@@ -65,8 +65,8 @@ processed_df = selected_df \
 # =========================
 
 processed_df = processed_df.withColumn(
-    "date",
-    to_date(col("사용일자"), "yyyyMMdd")
+    "ride_date",
+    to_date(col("USE_YMD"), "yyyyMMdd")
 )
 
 # =========================
@@ -75,7 +75,7 @@ processed_df = processed_df.withColumn(
 
 processed_df = processed_df.withColumn(
     "month",
-    month(col("date"))
+    month(col("ride_date"))
 )
 
 # =========================
@@ -84,7 +84,7 @@ processed_df = processed_df.withColumn(
 
 processed_df = processed_df.withColumn(
     "day_of_week",
-    dayofweek(col("date"))
+    dayofweek(col("ride_date"))
 )
 
 # =========================
@@ -104,14 +104,14 @@ processed_df = processed_df.dropDuplicates()
 # =========================
 
 processed_df = processed_df.select(
-    col("사용일자").alias("use_date"),
-    col("노선번호").alias("route_id"),
-    col("노선명").alias("route_name"),
-    col("버스정류장ARS번호").alias("station_ars_id"),
-    col("역명").alias("station_name"),
-    col("승차총승객수").alias("ride_passenger"),
-    col("하차총승객수").alias("alight_passenger"),
-    col("date").cast("string").alias("ride_date"),
+    col("USE_YMD").alias("use_date"),
+    col("RTE_NO").alias("route_id"),
+    col("RTE_NM").alias("route_name"),
+    col("STOPS_ARS_NO").alias("station_ars_id"),
+    col("SBWY_STNS_NM").alias("station_name"),
+    col("GTON_TNOPE").alias("ride_passenger"),
+    col("GTOFF_TNOPE").alias("alight_passenger"),
+    col("ride_date").cast("string"),
     col("month"),
     col("day_of_week")
 )
