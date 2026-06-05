@@ -57,12 +57,12 @@
 
 ### 대상 정류장
 
-* 13195 (명지대)
-* 13196 (명지대삼거리)
+* 13195 (명지대)-DMC센트럴아이파크 방면
+* 13194 (명지대)-명지대삼거리 방면
 
 ### 수집 기간
 
-* 2025년 1월 1일 ~ 2025년 6월 15일
+* 2025년 1월 ~ 2025년 6월 (각 월 1~15일 데이터만 수집)
 
 ---
 
@@ -118,9 +118,14 @@ visualization.py
 ├── collect_data.py
 ├── preprocess.py
 ├── hive_queries.sql
-├── visualization.py
 ├── run_pipeline.sh
-├── result_images
+├── visualization.py
+├── analysis_result/
+│   ├── monthly.csv
+│   ├── dayofweek.csv
+│   ├── routes.csv
+│   └── station.csv
+├── result_images/
 │   ├── monthly_analysis.png
 │   ├── dayofweek_analysis.png
 │   ├── top_routes.png
