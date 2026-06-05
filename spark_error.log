@@ -1,0 +1,156 @@
+SPARK_MAJOR_VERSION is set to 2, using Spark2
+26/06/05 09:59:29 INFO SparkContext: Running Spark version 2.3.1.3.0.1.0-187
+26/06/05 09:59:29 INFO SparkContext: Submitted application: MJU_Bus_Preprocessing
+26/06/05 09:59:29 INFO SecurityManager: Changing view acls to: maria_dev
+26/06/05 09:59:29 INFO SecurityManager: Changing modify acls to: maria_dev
+26/06/05 09:59:29 INFO SecurityManager: Changing view acls groups to: 
+26/06/05 09:59:29 INFO SecurityManager: Changing modify acls groups to: 
+26/06/05 09:59:29 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(maria_dev); groups with view permissions: Set(); users  with modify permissions: Set(maria_dev); groups with modify permissions: Set()
+26/06/05 09:59:29 INFO Utils: Successfully started service 'sparkDriver' on port 42867.
+26/06/05 09:59:29 INFO SparkEnv: Registering MapOutputTracker
+26/06/05 09:59:29 INFO SparkEnv: Registering BlockManagerMaster
+26/06/05 09:59:29 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/06/05 09:59:29 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/06/05 09:59:29 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-0a183685-72ef-42d2-a190-833467a1269f
+26/06/05 09:59:29 INFO MemoryStore: MemoryStore started with capacity 93.3 MB
+26/06/05 09:59:30 INFO SparkEnv: Registering OutputCommitCoordinator
+26/06/05 09:59:30 INFO log: Logging initialized @2801ms
+26/06/05 09:59:30 INFO Server: jetty-9.3.z-SNAPSHOT, build timestamp: 2018-06-05T17:11:56Z, git hash: 84205aa28f11a4f31f2a3b86d1bba2cc8ab69827
+26/06/05 09:59:30 INFO Server: Started @2898ms
+26/06/05 09:59:30 INFO AbstractConnector: Started ServerConnector@7e6204d2{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+26/06/05 09:59:30 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@74423c7e{/jobs,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@5a1d797e{/jobs/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@47d7004e{/jobs/job,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@4deb35f7{/jobs/job/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7c0c73bd{/stages,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@3a6c902{/stages/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@113c5c99{/stages/stage,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2fb9b9d8{/stages/stage/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@5c92e022{/stages/pool,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@3d210ec3{/stages/pool/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@33a7e44d{/storage,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@51b2fc98{/storage/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1aea857c{/storage/rdd,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2f08c7f4{/storage/rdd/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2301dbd4{/environment,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6511b510{/environment/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2b9e1dab{/executors,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@4240484b{/executors/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@6fb2f4ac{/executors/threadDump,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@7e3657f{/executors/threadDump/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@5c4b536d{/static,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@4b553285{/,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@55870f4{/api,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@4fbdbee4{/jobs/job/kill,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@5f118ccc{/stages/stage/kill,null,AVAILABLE,@Spark}
+26/06/05 09:59:30 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://sandbox-hdp.hortonworks.com:4040
+26/06/05 09:59:31 INFO RMProxy: Connecting to ResourceManager at sandbox-hdp.hortonworks.com/172.17.0.2:8050
+26/06/05 09:59:31 INFO Client: Requesting a new application from cluster with 1 NodeManagers
+26/06/05 09:59:31 INFO Configuration: found resource resource-types.xml at file:/etc/hadoop/3.0.1.0-187/0/resource-types.xml
+26/06/05 09:59:31 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (4096 MB per container)
+26/06/05 09:59:31 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+26/06/05 09:59:31 INFO Client: Setting up container launch context for our AM
+26/06/05 09:59:31 INFO Client: Setting up the launch environment for our AM container
+26/06/05 09:59:31 INFO Client: Preparing resources for our AM container
+26/06/05 09:59:33 INFO Client: Use hdfs cache file as spark.yarn.archive for HDP, hdfsCacheFile:hdfs://sandbox-hdp.hortonworks.com:8020/hdp/apps/3.0.1.0-187/spark2/spark2-hdp-yarn-archive.tar.gz
+26/06/05 09:59:33 INFO Client: Source and destination file systems are the same. Not copying hdfs://sandbox-hdp.hortonworks.com:8020/hdp/apps/3.0.1.0-187/spark2/spark2-hdp-yarn-archive.tar.gz
+26/06/05 09:59:33 INFO Client: Distribute hdfs cache file as spark.sql.hive.metastore.jars for HDP, hdfsCacheFile:hdfs://sandbox-hdp.hortonworks.com:8020/hdp/apps/3.0.1.0-187/spark2/spark2-hdp-hive-archive.tar.gz
+26/06/05 09:59:33 INFO Client: Source and destination file systems are the same. Not copying hdfs://sandbox-hdp.hortonworks.com:8020/hdp/apps/3.0.1.0-187/spark2/spark2-hdp-hive-archive.tar.gz
+26/06/05 09:59:33 INFO Client: Uploading resource file:/usr/hdp/current/spark2-client/python/lib/pyspark.zip -> hdfs://sandbox-hdp.hortonworks.com:8020/user/maria_dev/.sparkStaging/application_1780596964703_0040/pyspark.zip
+26/06/05 09:59:33 INFO Client: Uploading resource file:/usr/hdp/current/spark2-client/python/lib/py4j-0.10.7-src.zip -> hdfs://sandbox-hdp.hortonworks.com:8020/user/maria_dev/.sparkStaging/application_1780596964703_0040/py4j-0.10.7-src.zip
+26/06/05 09:59:33 INFO Client: Uploading resource file:/tmp/spark-d8edf53a-0246-41ae-97cf-16b917f5a259/__spark_conf__7126192307860706109.zip -> hdfs://sandbox-hdp.hortonworks.com:8020/user/maria_dev/.sparkStaging/application_1780596964703_0040/__spark_conf__.zip
+26/06/05 09:59:33 INFO SecurityManager: Changing view acls to: maria_dev
+26/06/05 09:59:33 INFO SecurityManager: Changing modify acls to: maria_dev
+26/06/05 09:59:33 INFO SecurityManager: Changing view acls groups to: 
+26/06/05 09:59:33 INFO SecurityManager: Changing modify acls groups to: 
+26/06/05 09:59:33 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(maria_dev); groups with view permissions: Set(); users  with modify permissions: Set(maria_dev); groups with modify permissions: Set()
+26/06/05 09:59:33 INFO Client: Submitting application application_1780596964703_0040 to ResourceManager
+26/06/05 09:59:34 INFO YarnClientImpl: Submitted application application_1780596964703_0040
+26/06/05 09:59:34 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1780596964703_0040 and attemptId None
+26/06/05 09:59:35 INFO Client: Application report for application_1780596964703_0040 (state: ACCEPTED)
+26/06/05 09:59:35 INFO Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1780653573983
+	 final status: UNDEFINED
+	 tracking URL: http://sandbox-hdp.hortonworks.com:8088/proxy/application_1780596964703_0040/
+	 user: maria_dev
+26/06/05 09:59:36 INFO Client: Application report for application_1780596964703_0040 (state: ACCEPTED)
+26/06/05 09:59:37 INFO Client: Application report for application_1780596964703_0040 (state: ACCEPTED)
+26/06/05 09:59:37 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> sandbox-hdp.hortonworks.com, PROXY_URI_BASES -> http://sandbox-hdp.hortonworks.com:8088/proxy/application_1780596964703_0040), /proxy/application_1780596964703_0040
+26/06/05 09:59:37 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+26/06/05 09:59:38 INFO Client: Application report for application_1780596964703_0040 (state: ACCEPTED)
+26/06/05 09:59:38 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+26/06/05 09:59:39 INFO Client: Application report for application_1780596964703_0040 (state: RUNNING)
+26/06/05 09:59:39 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 172.17.0.2
+	 ApplicationMaster RPC port: 0
+	 queue: default
+	 start time: 1780653573983
+	 final status: UNDEFINED
+	 tracking URL: http://sandbox-hdp.hortonworks.com:8088/proxy/application_1780596964703_0040/
+	 user: maria_dev
+26/06/05 09:59:39 INFO YarnClientSchedulerBackend: Application application_1780596964703_0040 has started running.
+26/06/05 09:59:39 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33921.
+26/06/05 09:59:39 INFO NettyBlockTransferService: Server created on sandbox-hdp.hortonworks.com:33921
+26/06/05 09:59:39 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/06/05 09:59:39 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, sandbox-hdp.hortonworks.com, 33921, None)
+26/06/05 09:59:39 INFO BlockManagerMasterEndpoint: Registering block manager sandbox-hdp.hortonworks.com:33921 with 93.3 MB RAM, BlockManagerId(driver, sandbox-hdp.hortonworks.com, 33921, None)
+26/06/05 09:59:39 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, sandbox-hdp.hortonworks.com, 33921, None)
+26/06/05 09:59:39 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, sandbox-hdp.hortonworks.com, 33921, None)
+26/06/05 09:59:39 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+26/06/05 09:59:39 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@2487f622{/metrics/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:40 INFO EventLoggingListener: Logging events to hdfs:/spark2-history/application_1780596964703_0040
+26/06/05 09:59:43 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.17.0.2:57788) with ID 1
+26/06/05 09:59:43 INFO YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.17.0.2:57798) with ID 2
+26/06/05 09:59:43 INFO BlockManagerMasterEndpoint: Registering block manager sandbox-hdp.hortonworks.com:38661 with 93.3 MB RAM, BlockManagerId(1, sandbox-hdp.hortonworks.com, 38661, None)
+26/06/05 09:59:43 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+26/06/05 09:59:43 INFO BlockManagerMasterEndpoint: Registering block manager sandbox-hdp.hortonworks.com:39989 with 93.3 MB RAM, BlockManagerId(2, sandbox-hdp.hortonworks.com, 39989, None)
+26/06/05 09:59:44 INFO SharedState: loading hive config file: file:/etc/spark2/3.0.1.0-187/0/hive-site.xml
+26/06/05 09:59:44 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('/apps/spark/warehouse').
+26/06/05 09:59:44 INFO SharedState: Warehouse path is '/apps/spark/warehouse'.
+26/06/05 09:59:44 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL.
+26/06/05 09:59:44 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@424fa396{/SQL,null,AVAILABLE,@Spark}
+26/06/05 09:59:44 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/json.
+26/06/05 09:59:44 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@73a55702{/SQL/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:44 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/execution.
+26/06/05 09:59:44 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@490f0112{/SQL/execution,null,AVAILABLE,@Spark}
+26/06/05 09:59:44 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/execution/json.
+26/06/05 09:59:44 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@1c6e7442{/SQL/execution/json,null,AVAILABLE,@Spark}
+26/06/05 09:59:44 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /static/sql.
+26/06/05 09:59:44 INFO ContextHandler: Started o.s.j.s.ServletContextHandler@12d38311{/static/sql,null,AVAILABLE,@Spark}
+26/06/05 09:59:44 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+Traceback (most recent call last):
+  File "/home/maria_dev/2026-bdp/preprocess.py", line 23, in <module>
+    "/user/maria_dev/api_data/MJU_BUS_API_2025_1H.csv"
+  File "/usr/hdp/current/spark2-client/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 441, in csv
+  File "/usr/hdp/current/spark2-client/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/usr/hdp/current/spark2-client/python/lib/pyspark.zip/pyspark/sql/utils.py", line 69, in deco
+pyspark.sql.utils.AnalysisException: u'Path does not exist: hdfs://sandbox-hdp.hortonworks.com:8020/user/maria_dev/api_data/MJU_BUS_API_2025_1H.csv;'
+26/06/05 09:59:45 INFO SparkContext: Invoking stop() from shutdown hook
+26/06/05 09:59:45 INFO AbstractConnector: Stopped Spark@7e6204d2{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+26/06/05 09:59:45 INFO SparkUI: Stopped Spark web UI at http://sandbox-hdp.hortonworks.com:4040
+26/06/05 09:59:45 INFO YarnClientSchedulerBackend: Interrupting monitor thread
+26/06/05 09:59:45 INFO YarnClientSchedulerBackend: Shutting down all executors
+26/06/05 09:59:45 INFO YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+26/06/05 09:59:45 INFO SchedulerExtensionServices: Stopping SchedulerExtensionServices
+(serviceOption=None,
+ services=List(),
+ started=false)
+26/06/05 09:59:45 INFO YarnClientSchedulerBackend: Stopped
+26/06/05 09:59:45 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/06/05 09:59:45 INFO MemoryStore: MemoryStore cleared
+26/06/05 09:59:45 INFO BlockManager: BlockManager stopped
+26/06/05 09:59:45 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/06/05 09:59:45 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/06/05 09:59:45 INFO SparkContext: Successfully stopped SparkContext
+26/06/05 09:59:45 INFO ShutdownHookManager: Shutdown hook called
+26/06/05 09:59:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-d8edf53a-0246-41ae-97cf-16b917f5a259
+26/06/05 09:59:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-d8edf53a-0246-41ae-97cf-16b917f5a259/pyspark-ff83cf51-6739-4d46-aefa-969accb64f9b
+26/06/05 09:59:45 INFO ShutdownHookManager: Deleting directory /tmp/spark-eb95b647-434f-414d-a260-a1ab6febece8

@@ -1,280 +1,134 @@
-import os
+# -*- coding: utf-8 -*-
 
-os.makedirs("result_images", exist_ok=True)
+import os
+import pandas as pd
 
 import matplotlib
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 
-# -------------------------
-# Monthly Analysis
-# -------------------------
+os.makedirs("result_images", exist_ok=True)
 
-months = [1, 2, 3, 4, 5, 6]
-rides = [38367, 37218, 57428, 62086, 55115, 53087]
+# =========================
+# Monthly Analysis
+# =========================
+
+monthly = pd.read_csv(
+    "analysis_result/monthly.csv"
+)
 
 plt.figure(figsize=(8, 5))
-plt.plot(months, rides, marker="o")
+
+plt.plot(
+    monthly.iloc[:, 0],
+    monthly.iloc[:, 1],
+    marker="o"
+)
+
 plt.title("Monthly Ridership")
 plt.xlabel("Month")
 plt.ylabel("Passengers")
 plt.grid(True)
 
-plt.savefig("result_images/monthly_analysis.png")
+plt.savefig(
+    "result_images/monthly_analysis.png"
+)
+
 plt.close()
 
-# -------------------------
+# =========================
 # Day Of Week Analysis
-# -------------------------
+# =========================
 
-days = [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat"
-]
-
-day_rides = [
-    25859,
-    42513,
-    49082,
-    52519,
-    55330,
-    42493,
-    35505
-]
+day = pd.read_csv(
+    "analysis_result/dayofweek.csv"
+)
 
 plt.figure(figsize=(8, 5))
-plt.bar(days, day_rides)
+
+plt.bar(
+    day.iloc[:, 0].astype(str),
+    day.iloc[:, 1]
+)
 
 plt.title("Day Of Week Ridership")
 plt.xlabel("Day")
 plt.ylabel("Passengers")
 
-plt.savefig("result_images/dayofweek_analysis.png")
+plt.savefig(
+    "result_images/dayofweek_analysis.png"
+)
+
 plt.close()
 
-# -------------------------
-# Top Routes
-# -------------------------
+# =========================
+# Route Analysis
+# =========================
 
-routes = [
-    "7612",
-    "7734",
-    "7021",
-    "7611",
-    "7019",
-    "7713",
-    "7017",
-    "N75",
-    "8773"
-]
-
-route_rides = [
-    81111,
-    61488,
-    40578,
-    39739,
-    32755,
-    26318,
-    16964,
-    2282,
-    2066
-]
+routes = pd.read_csv(
+    "analysis_result/routes.csv"
+)
 
 plt.figure(figsize=(10, 6))
 
-plt.barh(routes, route_rides)
+plt.barh(
+    routes.iloc[:, 0].astype(str),
+    routes.iloc[:, 1]
+)
 
 plt.title("Top Bus Routes")
 plt.xlabel("Passengers")
 
-plt.savefig("result_images/top_routes.png")
-plt.close()
-
-# -------------------------
-# Station Comparison
-# -------------------------
-
-stations = [
-    "MJU",
-    "MJU Intersection"
-]
-
-ride = [
-    246042,
-    57259
-]
-
-alight = [
-    60103,
-    100706
-]
-
-x = range(len(stations))
-width = 0.35
-
-plt.figure(figsize=(8, 5))
-
-plt.bar(
-    [i - width / 2 for i in x],
-    ride,
-    width=width,
-    label="Boarding"
+plt.savefig(
+    "result_images/top_routes.png"
 )
 
-plt.bar(
-    [i + width / 2 for i in x],
-    alight,
-    width=width,
-    label="Alighting"
+plt.close()
+
+# =========================
+# Station Analysis
+# =========================
+
+station = pd.read_csv(
+    "analysis_result/station.csv"
 )
 
-plt.xticks(list(x), stations)
-
-plt.title("Boarding vs Alighting")
-plt.ylabel("Passengers")
-plt.legend()
-
-plt.savefig("result_images/station_direction.png")
-plt.close()
-
-print("=================================")
-print("Visualization Complete")
-print("Saved to result_images/")
-print("=================================")
-import matplotlib.pyplot as plt
-
-# -------------------------
-# Monthly Analysis
-# -------------------------
-
-months = [1, 2, 3, 4, 5, 6]
-rides = [38367, 37218, 57428, 62086, 55115, 53087]
-
-plt.figure(figsize=(8, 5))
-plt.plot(months, rides, marker="o")
-plt.title("Monthly Ridership")
-plt.xlabel("Month")
-plt.ylabel("Passengers")
-plt.grid(True)
-
-plt.savefig("monthly_analysis.png")
-plt.close()
-
-# -------------------------
-# Day Of Week Analysis
-# -------------------------
-
-days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-
-day_rides = [
-    25859,
-    42513,
-    49082,
-    52519,
-    55330,
-    42493,
-    35505
-]
-
-plt.figure(figsize=(8, 5))
-plt.bar(days, day_rides)
-
-plt.title("Day Of Week Ridership")
-plt.xlabel("Day")
-plt.ylabel("Passengers")
-
-plt.savefig("dayofweek_analysis.png")
-plt.close()
-
-# -------------------------
-# Top Routes
-# -------------------------
-
-routes = [
-    "7612",
-    "7734",
-    "7021",
-    "7611",
-    "7019",
-    "7713",
-    "7017",
-    "N75",
-    "8773"
-]
-
-route_rides = [
-    81111,
-    61488,
-    40578,
-    39739,
-    32755,
-    26318,
-    16964,
-    2282,
-    2066
-]
-
-plt.figure(figsize=(10, 6))
-
-plt.barh(routes, route_rides)
-
-plt.title("Top Bus Routes")
-plt.xlabel("Passengers")
-
-plt.savefig("top_routes.png")
-plt.close()
-
-# -------------------------
-# Station Comparison
-# -------------------------
-
-stations = [
-    "MJU",
-    "MJU Intersection"
-]
-
-ride = [
-    246042,
-    57259
-]
-
-alight = [
-    60103,
-    100706
-]
-
-x = range(len(stations))
+x = range(len(station))
 width = 0.35
 
 plt.figure(figsize=(8, 5))
 
 plt.bar(
     [i - width/2 for i in x],
-    ride,
+    station.iloc[:, 1],
     width=width,
     label="Ride"
 )
 
 plt.bar(
     [i + width/2 for i in x],
-    alight,
+    station.iloc[:, 2],
     width=width,
     label="Alight"
 )
 
-plt.xticks(x, stations)
+plt.xticks(
+    list(x),
+    station.iloc[:, 0].astype(str)
+)
 
 plt.title("Boarding vs Alighting")
 plt.ylabel("Passengers")
 plt.legend()
 
-plt.savefig("station_direction.png")
+plt.savefig(
+    "result_images/station_direction.png"
+)
+
 plt.close()
 
+print("=================================")
 print("Visualization Complete")
+print("Saved to result_images/")
+print("=================================")

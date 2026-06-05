@@ -26,7 +26,7 @@ df = spark.read \
 # 2. 명지대 정류장 필터링
 # =========================
 
-target_stations = ["13195", "13196"]
+target_stations = ["13195", "13194"]
 
 filtered_df = df.filter(
     col("STOPS_ARS_NO").isin(target_stations)
