@@ -99,9 +99,9 @@ preprocess.py
         ↓
 Apache Spark
         ↓
-Hive 테이블 생성
-        ↓
 Hive 분석
+        ↓
+analysis_result CSV 생성
         ↓
 visualization.py
         ↓
@@ -135,21 +135,75 @@ visualization.py
 
 ---
 
+
+## 실행 환경
+
+본 프로젝트는 HDP Sandbox 환경에서 개발 및 실행하였다.
+
+---
+
 ## 실행 방법
 
-전체 파이프라인 실행
+### 1. GitHub 저장소 다운로드
+
+```bash
+git clone https://github.com/GYEONGSIK03/2026-bdp.git
+cd 2026-bdp
+```
+
+### 2. 실행 권한 부여
+
+```bash
+chmod +x run_pipeline.sh
+```
+
+### 3. 전체 파이프라인 실행
 
 ```bash
 ./run_pipeline.sh
 ```
 
-실행 과정
+### 실행 순서
 
-1. Open API 데이터 수집
-2. HDFS 저장
-3. Spark 전처리
-4. Hive 분석
-5. 시각화 결과 생성
+1. collect_data.py
+
+   * 서울시 Open API 데이터 수집
+   * CSV 생성 및 HDFS 업로드
+
+2. preprocess.py
+
+   * Spark 기반 데이터 전처리
+   * 명지대학교 주변 정류장 데이터 추출
+
+3. hive_queries.sql
+
+   * Hive 분석 수행
+   * 월별/요일별/노선별 분석
+
+4. visualization.py
+
+   * 분석 결과 CSV 생성
+   * Matplotlib 기반 그래프 생성
+
+### 결과 파일
+
+분석 결과 CSV
+
+analysis_result/
+
+- monthly.csv
+- dayofweek.csv
+- routes.csv
+- station.csv
+
+시각화 결과
+
+result_images/
+
+- monthly_analysis.png
+- dayofweek_analysis.png
+- top_routes.png
+- station_direction.png
 
 ---
 
@@ -186,5 +240,4 @@ visualization.py
 * Hive 3.x
 * Python 3.6
 
-```
 ```
