@@ -130,6 +130,8 @@ visualization.py
 │   ├── dayofweek_analysis.png
 │   ├── top_routes.png
 │   └── station_direction.png
+├── data/
+│   └── sample_bus_data.csv
 └── .gitignore
 ```
 
